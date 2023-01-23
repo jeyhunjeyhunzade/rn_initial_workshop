@@ -9,14 +9,19 @@ const Lists = () => {
         {name: "Friends 3"},
         {name: "Friends 4"},
         {name: "Friends 5"},
-        {name: "Friends 6"}
+        {name: "Friends 6"},
+        {name: "Friends 7"},
+        {name: "Friends 8"},
+        {name: "Friends 9"},
+        {name: "Friends 10"},
     ]
 
     return (
         <FlatList
+            keyExtractor={friend => friend.name}
             data={friends}
-            renderItem={({friend}) => {
-                return <Text>{friend.name}</Text>
+            renderItem={({item}) => {
+                return <Text style={styles.listStyle}>{item.name}</Text>
             }}
         />
     )
@@ -26,6 +31,9 @@ const styles = StyleSheet.create({
     textStyle: {
         fonstSize: 100,
         color: "red"
+    },
+    listStyle: {
+        marginVertical: 50
     }
 })
 
